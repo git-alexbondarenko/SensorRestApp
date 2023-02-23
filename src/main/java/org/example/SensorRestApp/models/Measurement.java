@@ -21,7 +21,7 @@ public class Measurement {
     @Max(value = 100)
     private Double value;
 
-    @Column(name = "raining")
+    @Column(name = "israining")
     @NotNull
     private boolean isRaining;
 
@@ -32,7 +32,7 @@ public class Measurement {
 
     @Column(name = "measurement_date_time")
     @NotNull
-    private LocalDateTime dateTime;
+    private LocalDateTime measurementDateTime;
 
     public int getId() {
         return id;
@@ -66,11 +66,11 @@ public class Measurement {
         this.sensor = sensor;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDateTime getMeasurementDateTime() {
+        return measurementDateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setMeasurementDateTime(LocalDateTime dateTime) {
+        this.measurementDateTime = dateTime;
     }
 }

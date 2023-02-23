@@ -28,7 +28,11 @@ public class MeasurementsService {
     @Transactional
     public void addMeasurement(Measurement measurement) {
         measurement.setSensor(sensorsService.findByName(measurement.getSensor().getName()).get());
-        measurement.setDateTime(LocalDateTime.now());
+        measurement.setMeasurementDateTime(LocalDateTime.now());
         measurementsRepository.save(measurement);
+    }
+
+    public Long getRainyDaysCount() {
+        return measurementsRepository.countDistinctMeasurementDatesWhereIsRaining();
     }
 }
